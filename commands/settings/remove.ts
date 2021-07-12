@@ -12,7 +12,7 @@ const command: Command = {
       $set: {
         active: true,
       },
-      pull: {
+      $pull: {
         classes: args[0],
       },
     };
