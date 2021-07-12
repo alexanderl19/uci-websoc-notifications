@@ -31,6 +31,16 @@ const command: Command = {
       return "An error occurred while validating the class code. Please try again.";
     }
 
+    await mongoDb.collection("classes").updateOne(
+      { code: courseCode },
+      {
+        $set: {
+          code: courseCode,
+        },
+      },
+      { upsert: true }
+    );
+
     const filter = { number: from };
     const options = { upsert: true };
     const updateDoc = {
