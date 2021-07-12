@@ -4,7 +4,8 @@
   "description": "(661) 764-4377",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
