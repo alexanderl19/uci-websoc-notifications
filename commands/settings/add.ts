@@ -38,8 +38,8 @@ const command: Command = {
         number: from,
         active: true,
       },
-      $push: {
-        classes: courseCode,
+      $addToSet: {
+        tags: courseCode,
       },
     };
     await mongoDb.collection("users").updateOne(filter, updateDoc, options);
