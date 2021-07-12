@@ -39,7 +39,7 @@ const command: Command = {
         active: true,
       },
       $addToSet: {
-        tags: courseCode,
+        classes: courseCode,
       },
     };
     await mongoDb.collection("users").updateOne(filter, updateDoc, options);
