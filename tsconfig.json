@@ -2,8 +2,8 @@
   "compilerOptions": {
     "strict": true,
     "module": "commonjs",
+    "esModuleInterop": true,
     "target": "es2019",
-    "declaration": true,
     "outDir": "dist"
   }
 }
