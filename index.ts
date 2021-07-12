@@ -80,7 +80,7 @@ const consumer = new RelayConsumer({
   onIncomingMessage: async (message: IMessage) => {
     const reply = await handleIncomingMessage(message);
     await client.messaging.send({
-      context: "error",
+      context: "notification",
       from: "+16617644377",
       to: message.from,
       // @ts-ignore
