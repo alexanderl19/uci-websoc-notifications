@@ -9,7 +9,7 @@ const command: Command = {
   async execute(from, args, mongoDb) {
     let form = new FormData();
     await form.append("YearTerm", "2021-92");
-    await form.append("CourseCodes", "16406");
+    await form.append("CourseCodes", args[0]);
     await form.append("Submit", "Display XML Results");
 
     const res = await axios({
