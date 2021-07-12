@@ -7,14 +7,14 @@ const command: Command = {
     const data = [];
 
     if (!args.length) {
-      data.push("Here's a list of all my commands:");
+      data.push("Here's a list of commands:");
       data.push(
         Array.from(commands.values())
           .map((command) => command.name)
           .join(", ")
       );
       data.push(
-        `\nYou can send "help [command name]" to get info on a specific command.`
+        `\nYou can send "help [command name]" for info on a specific command.`
       );
 
       const date = new Date();
