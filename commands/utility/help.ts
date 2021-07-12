@@ -17,6 +17,8 @@ const command: Command = {
         `\nYou can send "help [command name]" to get info on a specific command.`
       );
 
+      const date = new Date();
+      data.push(`\n${date.getHours()}:${date.getMinutes()}`);
       return data.join("\n");
     }
 

@@ -166,12 +166,16 @@ mongoClient.connect().then(async (mongoClient) => {
                       },
                     ])
                     .toArray();
+
+                  const date = new Date();
                   allNumbersArray.forEach((number) => {
                     client.messaging.send({
                       context: "notification",
                       from: "+16617644377",
                       to: number.number,
-                      body: `${courseCode}'s status changed from "${statuses[courseCode]}" to "${secStatus}"\n\nReply "STOP" to stop receiving all messages.`,
+                      body: `${courseCode} changed from "${
+                        statuses[courseCode]
+                      }" to "${secStatus}" at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}\n\nReply "STOP" to stop receiving all messages.`,
                     });
                   });
                 }
