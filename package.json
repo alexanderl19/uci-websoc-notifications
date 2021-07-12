@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/alexanderl19/uci-websoc-notifications/issues"
   },
-  "homepage": "https://github.com/alexanderl19/uci-websoc-notifications#readme"
+  "homepage": "https://github.com/alexanderl19/uci-websoc-notifications#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-angular": "^12.1.4",
+    "husky": "^7.0.1",
+    "prettier": "2.3.2"
+  }
 }
