@@ -162,6 +162,7 @@ mongoClient.connect().then(async (mongoClient) => {
                         $project: {
                           _id: 0,
                           number: 1,
+                          active: 1,
                         },
                       },
                     ])
@@ -169,14 +170,16 @@ mongoClient.connect().then(async (mongoClient) => {
 
                   const date = new Date();
                   allNumbersArray.forEach((number) => {
-                    client.messaging.send({
-                      context: "notification",
-                      from: "+16617644377",
-                      to: number.number,
-                      body: `${courseCode} changed from "${
-                        statuses[courseCode]
-                      }" to "${secStatus}" at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}\n\nReply "STOP" to stop receiving all messages.`,
-                    });
+                    if (number.active) {
+                      client.messaging.send({
+                        context: "notification",
+                        from: "+16617644377",
+                        to: number.number,
+                        body: `${courseCode} changed from "${
+                          statuses[courseCode]
+                        }" to "${secStatus}" at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}\n\nReply "STOP" to stop receiving all messages.`,
+                      });
+                    }
                   });
                 }
               }
